@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- header -->
+      <header class="header glass">
+        <div class="container">
+          <div class="nav-wrapper">
+            <!-- logo -->
+            <a href="./index.html" class="logo">
+              <svg width="100" height="54">
+                <use href="./image/sprite.svg#icon-logo-quiz-black"></use>
+              </svg>
+            </a>
+            <!-- switch -->
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- hero - registration  -->
+        <section class="hero">
+          <div class="container">
+            <div class="time glass">
+              <p>Feb 1, 2025 Time:20:35</p>
+            </div>
+            <div class="form-container glass">
+              <div class="form-wrapper">
+                <h1 class="hero-title">Registration</h1>
+                <form>
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" placeholder="Type your name"/>
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" placeholder="Enter your email"/>
+                  <button class="" type="submit">submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- footer -->
+      <footer class="footer glass">
+        <p>Footer</p>
+      </footer>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
