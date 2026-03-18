@@ -78,6 +78,7 @@ body {
   font-size: 20px;
   color: #000;
   position: relative;
+  transition: color 250ms ease;
 }
 body::before {
   content: "";
@@ -96,6 +97,7 @@ body::before {
 }
 input {
   width: 100%;
+  box-sizing: border-box;
   border: none;
   border-radius: 20px;
   outline: none;
@@ -194,6 +196,59 @@ input:checked + .slider:before {
     -webkit-backdrop-filter: blur(12px);
   }
 }
+
+body.glass-theme {
+  color: #e2d6ff;
+}
+
+body.glass-theme .header,
+body.glass-theme .footer,
+body.glass-theme .form-container {
+  background: rgba(255, 150, 151, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 14px 30px rgba(83, 18, 26, 0.28);
+}
+
+body.glass-theme .time {
+  background: rgba(245, 241, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 14px 30px rgba(55, 40, 88, 0.22);
+}
+
+body.glass-theme .time p {
+  color: #fff;
+}
+
+body.glass-theme .hero-title,
+body.glass-theme label,
+body.glass-theme .footer,
+body.glass-theme .header {
+  color: #e2d6ff;
+}
+
+body.glass-theme .form-wrapper button[type="submit"] {
+  background: #ff0004;
+  color: #e2d6ff;
+  box-shadow:
+    inset 8px 8px 16px rgba(255, 110, 124, 0.34),
+    inset -8px -8px 16px rgba(140, 0, 12, 0.48),
+    0 14px 24px rgba(92, 0, 8, 0.34);
+}
+
+body.glass-theme .form-wrapper button[type="submit"]:hover,
+body.glass-theme .form-wrapper button[type="submit"]:focus {
+  background: #d90004;
+  color: #f3ebff;
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 124, 137, 0.26),
+    inset -10px -10px 18px rgba(110, 0, 10, 0.52),
+    0 18px 28px rgba(92, 0, 8, 0.38),
+    0 0 0 4px rgba(255, 0, 4, 0.18);
+}
 /* #endregion */
 
 /* #region header */
@@ -201,6 +256,42 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  transition:
+    transform 450ms ease,
+    filter 450ms ease,
+    box-shadow 450ms ease;
+  transform-origin: center;
+}
+.logo svg {
+  display: block;
+  transition:
+    transform 450ms ease,
+    filter 450ms ease;
+  transform-origin: center;
+}
+.logo:hover,
+.logo:focus-visible {
+  box-shadow: 0 0 0 4px rgba(245, 241, 255, 0.3);
+}
+.logo:hover svg,
+.logo:focus-visible svg {
+  transform: rotate(360deg) scale(1.08);
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(95%)
+    sepia(20%)
+    saturate(428%)
+    hue-rotate(295deg)
+    brightness(107%)
+    contrast(104%)
+    drop-shadow(0 8px 14px rgba(72, 15, 22, 0.28));
 }
 .header {
   box-shadow:
@@ -247,6 +338,52 @@ input:checked + .slider:before {
 .form-wrapper {
   max-width: 500px;
   margin: 0 auto;
+}
+.form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.form-wrapper button[type="submit"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff9697;
+  color: #7a1f24;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 198, 198, 0.65),
+    inset -10px -10px 18px rgba(184, 77, 88, 0.38),
+    0 14px 24px rgba(146, 52, 62, 0.28),
+    0 6px 10px rgba(255, 255, 255, 0.2);
+  transition:
+    background-color 250ms ease,
+    box-shadow 250ms ease,
+    transform 250ms ease,
+    color 250ms ease;
+}
+.form-wrapper button[type="submit"]:hover,
+.form-wrapper button[type="submit"]:focus {
+  background: #eb7f82;
+  color: #64161d;
+  box-shadow:
+    inset 12px 12px 22px rgba(255, 190, 190, 0.45),
+    inset -12px -12px 20px rgba(154, 49, 60, 0.42),
+    0 18px 28px rgba(125, 37, 46, 0.32),
+    0 0 0 4px rgba(255, 150, 151, 0.18);
+  transform: translateY(-2px);
+}
+.form-wrapper button[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 14px 14px 20px rgba(157, 56, 67, 0.34),
+    inset -8px -8px 16px rgba(255, 198, 198, 0.28),
+    0 8px 14px rgba(125, 37, 46, 0.24);
 }
 .hero-title {
   margin-bottom: 20px;
