@@ -16,7 +16,7 @@ menuTitle.textContent = `Welcome, ${userName}! To Quiz !`;
 quizzes.forEach(({id,image, title}) => {
   const html = `
                <li class="menu-quiz-item" id=${id}>
-               <a href="../pages/quiz.html?quiz=${title.toLowerCase().split(" ").join("-")}">
+               <a href="/Glasgow-Clyde-Quiz/pages/quiz.html?quiz=${title.toLowerCase().split(" ").join("-")}">
                   <div class="menu-quiz-wrap-img">
                     <img class="menu-quiz-img" src=${image} alt=${title}>
                   </div>
