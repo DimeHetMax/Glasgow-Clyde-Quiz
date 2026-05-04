@@ -16,19 +16,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="page-container">
       <!-- header -->
-      <header class="header glass">
+      <header class="header header-menu glass">
         <div class="container">
           <div class="nav-wrapper">
             <!-- logo -->
-            <a href="./index.html" class="logo">
+            <a href="../index.html" class="logo">
               <svg width="100" height="54">
-                <use href="./image/sprite.svg#icon-logo-quiz-black"></use>
+                <use href="../image/sprite.svg#icon-logo-quiz-black"></use>
               </svg>
             </a>
             <!-- switch -->
@@ -43,34 +43,29 @@
       </header>
 
       <main class="main">
-        <!-- hero - registration  -->
+        <!-- menu  -->
         <section class="hero">
           <div class="container">
             <div class="time glass">
               <p>Feb 1, 2025 Time:20:35</p>
             </div>
-            <div class="form-container glass">
-              <div class="form-wrapper">
-                <h1 class="hero-title">Registration</h1>
-                <form class="registration">
-                  <label for="name">Name</label>
-                  <input class="registration-input" type="text" name="name" id="name" placeholder="Type your name" required/>
-                  <label for="email">Email</label>
-                  <input class="registration-input" type="email" name="email" id="email" placeholder="Enter your email" required/>
-                  <button class="" type="submit">submit</button>
-                </form>
-              </div>
+            <div class="menu-container glass">
+              <h1 class="hero-title hero-title-menu menu-title">Menu</h1>
+              <p>Chose your Quiz:</p>
+              <ul class="menu-quiz-list">
+                <li class="menu-quiz-item"><a href="">=></a></li>
+              </ul>
             </div>
           </div>
         </section>
       </main>
       <!-- footer -->
-      <footer class="footer glass">
+      <footer class="footer footer-menu glass">
         <p>Footer</p>
       </footer>
     </div>
-    <script src="./js/main.js" type="module"></script>
-    <script src="./js/home.js" type="module"></script>
-    <script src="./js/registrationForm.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/menu.js" type="module"></script>
+    <!-- <script src="../js/registrationForm.js" type="module"></script> -->
   </body>
 </html>

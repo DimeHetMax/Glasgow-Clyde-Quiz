@@ -1,5 +1,5 @@
-const getCookie =(cname) =>{
-  let name = cname + "=";
+const getCookie =() =>{
+  const name = "username=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
   for(let i = 0; i <ca.length; i++) {

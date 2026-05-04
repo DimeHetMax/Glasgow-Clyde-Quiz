@@ -55,9 +55,11 @@ ol {
 }
 a {
   display: inline-block;
+  text-decoration: none;
 }
 img {
   display: block;
+  width: 100%;
 }
 .page-container {
   min-height: 100vh;
@@ -96,7 +98,6 @@ body::before {
   z-index: -1;
 }
 input {
-  width: 100%;
   box-sizing: border-box;
   border: none;
   border-radius: 20px;
@@ -107,7 +108,7 @@ input {
   background: transparent;
   padding: 5px 20px;
 }
-input::placeholder{
+input::placeholder {
   color: #d1d1d1;
 }
 
@@ -120,11 +121,7 @@ button {
     0 5px 5px 0 rgba(0, 0, 0, 0.25),
     0 5px 5px 0 rgba(0, 0, 0, 0.25);
 }
-/* .title-centered {
-  text-align: center;
-} */
-/* #region  switch*/
-/* From Uiverse.io by TimTrayler */
+
 .switch {
   --secondary-container: #3a4b39;
   --primary: #84da89;
@@ -181,7 +178,7 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
-/* #endregion */
+
 /* #region GLAS */
 .glass {
   background: rgba(255, 255, 255, 0.2);
@@ -204,22 +201,28 @@ body.glass-theme {
 body.glass-theme .header,
 body.glass-theme .footer,
 body.glass-theme .form-container {
-  background: rgba(255, 150, 151, 0.28);
+  background: rgb(255 183 184 / 28%);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    0 14px 30px rgba(83, 18, 26, 0.28);
 }
 
-body.glass-theme .time {
+body.glass-theme .header-menu,
+body.glass-theme .header-quiz,
+body.glass-theme .footer-menu,
+body.glass-theme .footer-quiz,
+body.glass-theme .menu-container,
+body.glass-theme .quiz-container {
+  background: rgb(187 158 255 / 28%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+body.glass-theme .time,
+body.glass-theme .back-btn {
   background: rgba(245, 241, 255, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    0 14px 30px rgba(55, 40, 88, 0.22);
 }
 
-body.glass-theme .time p {
+body.glass-theme .time p,
+body.glass-theme .back-btn a{
   color: #fff;
 }
 
@@ -229,9 +232,11 @@ body.glass-theme .footer,
 body.glass-theme .header {
   color: #e2d6ff;
 }
-
+body.glass-theme .hero-title-menu {
+  color: #ffb8b8;
+}
 body.glass-theme .form-wrapper button[type="submit"] {
-  background: #ff0004;
+  background: #8c5253;
   color: #e2d6ff;
   box-shadow:
     inset 8px 8px 16px rgba(255, 110, 124, 0.34),
@@ -241,7 +246,7 @@ body.glass-theme .form-wrapper button[type="submit"] {
 
 body.glass-theme .form-wrapper button[type="submit"]:hover,
 body.glass-theme .form-wrapper button[type="submit"]:focus {
-  background: #d90004;
+  background: #c48081;
   color: #f3ebff;
   box-shadow:
     inset 10px 10px 18px rgba(255, 124, 137, 0.26),
@@ -262,6 +267,7 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
+  padding: 12px;
   transition:
     transform 450ms ease,
     filter 450ms ease,
@@ -282,15 +288,8 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
 .logo:hover svg,
 .logo:focus-visible svg {
   transform: rotate(360deg) scale(1.08);
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(95%)
-    sepia(20%)
-    saturate(428%)
-    hue-rotate(295deg)
-    brightness(107%)
-    contrast(104%)
+  filter: brightness(0) saturate(100%) invert(95%) sepia(20%) saturate(428%)
+    hue-rotate(295deg) brightness(107%) contrast(104%)
     drop-shadow(0 8px 14px rgba(72, 15, 22, 0.28));
 }
 .header {
@@ -301,7 +300,10 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   background: #ff9697;
   border-radius: 0 0 20px 20px;
 }
-
+.header-menu,
+.header-quiz {
+  background: #b596ff;
+}
 /* #endregion */
 
 /* #region hero */
@@ -312,7 +314,7 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   margin-left: auto;
   max-width: 360px;
   border-radius: 20px;
-  padding: 25px 50px;
+  padding: 17px 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +325,9 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   background: #f5f1ff;
   margin-bottom: 70px;
 }
-.form-container {
+.form-container,
+.menu-container,
+.quiz-container {
   margin: 0 auto;
   max-width: 1079px;
   padding: 50px 70px 85px;
@@ -338,6 +342,9 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
 .form-wrapper {
   max-width: 500px;
   margin: 0 auto;
+}
+.registration-input {
+  width: 100%;
 }
 .form-wrapper form {
   display: flex;
@@ -400,4 +407,90 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   background: #ff9697;
   border-radius: 20px 20px 0 0;
 }
+.footer-menu,
+.footer-quiz {
+  background: #b596ff;
+}
 /* #endregion footer */
+
+/* #region menu */
+.menu-quiz-list {
+  display: flex;
+  justify-content: center;
+  gap: 119px;
+  row-gap: 55px;
+  flex-wrap: wrap;
+}
+.menu-quiz-item {
+  max-width: 200px;
+  flex-basis: calc((100% - 119px * 2) / 3);
+  border-radius: 20px;
+  background: rgba(1, 0, 0, 0.9);
+}
+.menu-quiz-img-wrap {
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+.menu-quiz-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+
+  box-shadow:
+    inset 18px 18px 20px rgba(0, 0, 0, 0.8),
+    inset -18px -18px 20px rgba(0, 0, 0, 0.8);
+
+  background: rgba(0, 0, 0, 0.15);
+}
+.menu-quiz-img {
+  border: 1px solid #000;
+  border-radius: 20px;
+
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.menu-quiz-wrap-text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+}
+/* #endregion */
+
+/* #region quiz */
+.back-btn{
+    max-width: 360px;
+    border-radius: 20px;
+    padding: 17px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25), 0 5px 5px 0 rgba(0, 0, 0, 0.25), 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+    background: #f5f1ff;
+    margin-bottom: 70px;
+}
+.wrapper-back-time{
+  display: flex;
+  justify-content: space-between;
+}
+.quiz-container {
+  padding: 34px 158px 52px;
+}
+.quiz-input-wrapper {
+  max-width: 686px;
+  margin-bottom: 33px;
+  border-bottom: 5px solid #b596ff;
+}
+.quiz-form-text {
+  margin-bottom: 22px;
+}
+
+/* #endregion */
