@@ -455,13 +455,39 @@ body.glass-theme .form-wrapper button[type="submit"]:focus {
   object-fit: cover;
   filter: grayscale(100%);
 }
-
 .menu-quiz-wrap-text {
   font-weight: 400;
   font-size: 16px;
   color: #fff;
   text-align: center;
   padding: 10px 20px;
+}
+.switch-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logout-wrapper{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logout-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+}
+.logout-icon-wrapper{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: azure;
+    margin-right: 5px;
 }
 /* #endregion */
 

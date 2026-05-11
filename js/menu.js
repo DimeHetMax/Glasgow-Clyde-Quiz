@@ -1,19 +1,26 @@
 import getCookie from "./getCookie.js";
 import locateTo from "./locateTo.js";
 import quizzes from "./data.js";
+import addLogoutBtn from "./addLogoutBtn.js";
+import logout from "./logout.js";
+import welcomeMessage from "./welcome.js";
 
 const menuTitle = document.querySelector(".menu-title");
 const menuQuizList = document.querySelector(".menu-quiz-list");
-console.log(quizzes);
-console.log(menuQuizList);
+const switchBtn = document.querySelector(".switch");
+
 
 const userName = getCookie();
 if (!userName) {
   locateTo("../index.html");
 }
-menuTitle.textContent = `Welcome, ${userName}! To Quiz !`;
 
-quizzes.forEach(({id,image, title}) => {
+addLogoutBtn(switchBtn, userName);
+logout(userName)
+welcomeMessage(menuTitle, userName)
+
+// menuTitle.textContent = `Welcome, ${userName}! To Quiz !`;
+quizzes.forEach(({ id, image, title }) => {
   const html = `
                <li class="menu-quiz-item" id=${id}>
                <a href="../pages/quiz.html?quiz=${title.toLowerCase().split(" ").join("-")}">
@@ -26,7 +33,10 @@ quizzes.forEach(({id,image, title}) => {
                   </a>
                 </li>
 `;
-  menuQuizList.insertAdjacentHTML("afterbegin",html);
+  menuQuizList.insertAdjacentHTML("afterbegin", html);
 });
 
 // {id: 1, title: 'Basic Numeracy', image: './image/numeracy.jpg', questions: Array(5)}
+
+
+
