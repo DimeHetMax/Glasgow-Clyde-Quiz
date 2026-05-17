@@ -9,6 +9,7 @@ const quizForm = document.querySelector(".quiz-form");
 const questionsWrapper = document.querySelector(".questions");
 const quizTitle = document.querySelector(".quiz-title");
 const switchBtn = document.querySelector(".switch");
+const submitFormBtn = document.querySelector(".submit-quiz-btn");
 
 const params = new URLSearchParams(window.location.search);
 const slug = params.get("quiz").split("-").join(" ");
@@ -25,7 +26,6 @@ if (!userName) {
 }
 addLogoutBtn(switchBtn, userName);
 logout(userName);
-
 
 quizTitle.textContent = `${titleToUpperCase(slug)}`;
 quiz.forEach((item, index) => {
@@ -66,26 +66,31 @@ quiz.forEach((item, index) => {
 const handleForm = (e) => {
   e.preventDefault();
   let totalScore = 0;
-  // console.log("Hello From FORM");
-  // console.log("event=>", e.target);
+
   quiz.forEach((question, index) => {
     const value = quizForm.elements[`q${index + 1}`].value;
-   
+
     const feedback = document.querySelector(`#f${index + 1}`);
     if (value === question.correctAnswer) {
-      // console.log("Answer:", value);
-      // console.log("Correct Answer:", question.correctAnswer);
       totalScore += 1;
-      feedback.textContent = "Correct";
+      feedback.textContent = `correct answer: ${question.correctAnswer}`;
+      feedback.classList.add("correct");
+      feedback.classList.remove("incorrect");
     } else {
-      // console.log("Answer:", value);
-      // console.log("Correct Answer:", question.correctAnswer);
-      feedback.textContent = "wrong";
+      feedback.textContent = `correct answer: ${question.correctAnswer}`;
+      feedback.classList.add("incorrect");
+      feedback.classList.remove("correct");
     }
   });
-  questionsWrapper.insertAdjacentHTML(
-    "afterend",
-    `<p> Score ${totalScore} out of ${quiz.length} </p>`,
-  );
+  totalScore >= 3
+    ? questionsWrapper.insertAdjacentHTML(
+        "afterend",
+        `<p class="quiz-total-score passColor"> Score ${totalScore} out of ${quiz.length} </p>`,
+      )
+    : questionsWrapper.insertAdjacentHTML(
+        "afterend",
+        `<p class="quiz-total-score"> Score ${totalScore} out of ${quiz.length} </p>`,
+      );
+  submitFormBtn.disabled = true;
 };
 quizForm.addEventListener("submit", handleForm);
