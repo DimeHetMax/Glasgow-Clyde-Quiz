@@ -660,7 +660,14 @@ body.glass-theme .logout-btn {
   color: #000;
 }
 /* #endregion */
-
+@media screen and (max-width: 350px) {
+  .back-btn {
+    padding: 14px 10px;
+  }
+  .time {
+    max-width: 138px;
+  }
+}
 @media screen and (min-width: 860px) {
   .container {
     padding: 0 30px;
