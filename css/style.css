@@ -661,6 +661,13 @@ body.glass-theme .logout-btn {
 }
 /* #endregion */
 @media screen and (max-width: 350px) {
+  .logout-wrapper >p{
+    font-size: 12px;
+  }
+  .logout-icon-wrapper {
+    margin-right: 2px;
+    font-size: 12px;
+}
   .back-btn {
     padding: 14px 10px;
   }
