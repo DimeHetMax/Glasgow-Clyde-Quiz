@@ -98,11 +98,11 @@ const handleForm = (e) => {
   totalScore >= 3
     ? questionsWrapper.insertAdjacentHTML(
         "afterend",
-        `<p class="quiz-total-score passColor"> Score ${totalScore} out of ${quiz.length} </p>`,
+        `<p class="quiz-total-score passColor"> Score ${totalScore} out of ${quiz.length}. PASS</p>`,
       )
     : questionsWrapper.insertAdjacentHTML(
         "afterend",
-        `<p class="quiz-total-score"> Score ${totalScore} out of ${quiz.length} </p>`,
+        `<p class="quiz-total-score"> Score ${totalScore} out of ${quiz.length}. FAIL </p>`,
       );
       // After submiting the form, button is disabled to prefent another submission
   submitFormBtn.disabled = true;

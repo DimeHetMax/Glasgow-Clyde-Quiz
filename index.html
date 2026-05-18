@@ -54,7 +54,8 @@
                 <h1 class="hero-title">Registration</h1>
                 <form class="registration">
                   <label for="name">Name</label>
-                  <input class="registration-input" type="text" name="name" id="name" placeholder="Type your name" required/>
+                  <input class="registration-input" type="text" name="name" id="name" placeholder="Type your name" pattern="[A-Za-z0-9 ]+" 
+    title="Only letters, numbers, and spaces are allowed."   minlength="2" maxlength="22" required />
                   <label for="email">Email</label>
                   <input class="registration-input" type="email" name="email" id="email" placeholder="Enter your email" required/>
                   <button class="" type="submit">submit</button>
