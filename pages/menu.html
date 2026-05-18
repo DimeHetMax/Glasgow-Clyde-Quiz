@@ -55,7 +55,11 @@
               <h1 class="hero-title hero-title-menu menu-title">Menu</h1>
               <p>Chose your Quiz:</p>
               <ul class="menu-quiz-list">
-                <li class="menu-quiz-item"><a href="">=></a></li>
+                <li class="menu-quiz-item menu-quiz-item-bottom"><a href="#" class="menu-quiz-item-bottom-link">
+                  <svg class=" menu-quiz-item-bottom-svg" width="150" height="150">
+                    <use href="../image/sprite.svg#icon-arrow-right"></use>
+                  </svg>
+                </a></li>
               </ul>
             </div>
           </div>
@@ -63,11 +67,13 @@
       </main>
       <!-- footer -->
       <footer class="footer footer-menu glass">
-        <a href="./index.html" class="logo">
+        <div class="container">
+           <a href="/index.html" class="logo">
           <svg width="100" height="54">
-            <use href="./image/sprite.svg#icon-logo-quiz-black"></use>
+            <use href="../image/sprite.svg#icon-logo-quiz-black"></use>
           </svg>
         </a>
+        </div>
       </footer>
     </div>
     <script src="../js/main.js" type="module"></script>

@@ -327,6 +327,9 @@ body.glass-theme .back-btn > span {
 body.glass-theme .logout-btn {
   color: #62ff77;
 }
+body.glass-theme .menu-quiz-item-bottom-svg{
+  fill:#E2D6FF;
+}
 /* #endregion */
 
 /* #region header */
@@ -501,7 +504,18 @@ body.glass-theme .logout-btn {
   border-radius: 20px;
   background: rgba(1, 0, 0, 0.9);
 }
-
+.menu-quiz-item-bottom{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 220px;
+}
+.menu-quiz-item-bottom-svg{
+  fill: #B596FF;
+}
+.menu-quiz-item-bottom-link{
+  padding: 20px;
+}
 .menu-quiz-img-wrap {
   position: relative;
   border: 1px solid #000;
