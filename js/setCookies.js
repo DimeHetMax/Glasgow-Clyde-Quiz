@@ -1,3 +1,4 @@
+// funtion set cookies for name and email
 const setCookie = ({name, email}) => {
   const expirationDays = 7;
   const date = new Date();

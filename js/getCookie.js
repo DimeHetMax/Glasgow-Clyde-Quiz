@@ -1,3 +1,4 @@
+// Function to retrieve the cookies;
 const getCookie =() =>{
   const name = "username=";
   let decodedCookie = decodeURIComponent(document.cookie);

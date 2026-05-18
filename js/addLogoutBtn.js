@@ -1,5 +1,5 @@
+// function adding layout of logout button to DOM before theme switch
 const addLogoutBtn = (switchBtn, userName) => {
-  // console.log("addLogout =>", switchBtn, userName);
   if (!switchBtn) {
     return;
   }

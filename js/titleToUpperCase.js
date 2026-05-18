@@ -1,3 +1,4 @@
+// Fucntion make the each word of the title start with capital letter
 const titleToUpperCase = (str) => {
   const arr = str.split(" ").map((word) => {
     const capitalLetter = word[0].toUpperCase();
